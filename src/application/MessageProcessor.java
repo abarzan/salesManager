@@ -84,15 +84,12 @@ public class MessageProcessor {
 			else if(messageType.equalsIgnoreCase(MessageTypes.MODE_2)){
 				noOfSales = Integer.valueOf(messageComp[3]);
 				if (salesOfCurrentType==null) {
-					Sale sale = new Sale(productType, value);
 					List<Sale> salesOfType = new ArrayList<Sale>();
 					for (int i=0; i<noOfSales; i++) {
-						salesOfType.add(sale);
+						salesOfType.add(new Sale (productType, value));
 					}
 					SalesByType salesByType = new SalesByType(productType, salesOfType);
 					allSales.put(productType, salesByType);
-					
-					
 				}
 				else {
 					for (int i=0; i<noOfSales; i++) {
