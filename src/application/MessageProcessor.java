@@ -100,6 +100,8 @@ public class MessageProcessor {
 			
 		}
 		else if (messageType.equalsIgnoreCase(MessageTypes.MODE_3)){
+			
+			// test comment 
 			operator = messageComp[3];
 			if (salesOfCurrentType!=null) {
 				adjust(operator, salesOfCurrentType.getSales(), value);
